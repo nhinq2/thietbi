@@ -111,7 +111,7 @@ class ProductController extends Controller
        $filter['city_id'] = $request->city_id;
        $filter['district_id'] = $request->district_id;
         $keyword = $request->keyword;
-        if ($keyword) {
+         
           return Product::where('title', 'like', "%" . $keyword . "%")
           ->when($filter, function($query, $filter) {
               if($filter['city_id']) {
@@ -122,9 +122,7 @@ class ProductController extends Controller
               }
             })->paginate(100);
           //->orWhere('summary', 'like', "%" . $keyword . "%")
-        }else {
-          return [];
-        }
+        
     }
 
     function api_upload(Request $request){
