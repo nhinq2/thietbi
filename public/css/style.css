@@ -1,0 +1,63 @@
+body{
+ font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.mw-90p{
+  max-width: 90px;
+}
+.display-5{
+  font-size: 2rem;
+}
+.display-6 {
+    font-size: 1.5rem;
+}
+.pt-lg{
+  padding-top: 24px;
+}
+.navbar-brand img{
+  max-width: 48px;
+  height: auto;
+}
+.navbar-brand .img-mobile{
+  max-width: 32px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .p-0-xs{
+    padding: 0 !important
+  }
+  .px-1-xs{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .small-xs{
+    font-size: 13px,
+  }
+  .media-xs{
+    display: block;
+  }
+  .px-small{
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+  .w50-xs{
+    width: 40%
+  }
+  .mw-90p{
+    max-width: 90px;
+    padding-left: 4px;
+    min-width: 60px;
+    padding-right: 4px;
+  }
+  .pt-xs{
+    padding-top: 54px;
+  }
+  .mt-1-xs{
+    margin-top: 0.3rem
+  }
+  .pt-3-xs{
+    padding-top: 1.5rem
+  }
+}
