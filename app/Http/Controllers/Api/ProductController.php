@@ -45,7 +45,7 @@ class ProductController extends Controller
         $filter['city_id'] = $request->city_id;
         $filter['district_id'] = $request->district_id;
 
-        $category = Category::where('parent_id',0)->get();
+        $category = Category::where('parent_id','!=', 0)->get();
         $products = [];
         foreach ($category as $value) {
           $product = Product::where('category_id',$value->id)
