@@ -23,6 +23,7 @@ Route::group(['middleware' => 'guest:api'], function () {
   Route::post('product/delete', 'Api\ProductController@api_delete');
 
   Route::get('categories', 'Api\CategoryController@api_list');
+  Route::get('category/{id}', 'Api\CategoryController@api_sublist');
 
   Route::post('order', 'Api\OrderController@api_post');
   Route::post('order/update', 'Api\OrderController@api_update');
