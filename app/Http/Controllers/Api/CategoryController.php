@@ -23,6 +23,11 @@ class CategoryController extends Controller
     {
         return Category::where('parent_id',0)->paginate(10);
     }
+   
+    public function api_sublist($id)
+    {
+        return Category::where('parent_id',$id)->paginate(20);
+    }
 
 
 }
