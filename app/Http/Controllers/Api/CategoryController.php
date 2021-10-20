@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
     public function api_list()
     {
-        return Category::get();
+        return Category::orderBy('index')->get();
     }
    
     public function api_sublist($id)
