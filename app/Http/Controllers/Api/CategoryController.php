@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
     public function api_list()
     {
-        return Category::where('parent_id',0)->paginate(10);
+        return Category::get();
     }
    
     public function api_sublist($id)
