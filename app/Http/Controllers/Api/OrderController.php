@@ -48,6 +48,7 @@ class OrderController extends Controller
       $data = $request->only(
           'phone', 'email', 'address', 'district', 'city', 'country', 'zip', 'note', 'user_id', 'shop_id', 'total', 'status', 'read', 'show'
       );
+      $data['shopping'] = json_encode($request->items);
       return DB::table('orders')->where('id', $request->id)->update($data);
   }
 
