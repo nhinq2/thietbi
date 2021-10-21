@@ -19,21 +19,22 @@ class ProductImport implements ToCollection
         $i++; if($i==1) continue; //next row
         if(! empty($row[0])){
           $product = Product::where('sku', $row[1])->first();
-          $images = str_replace(" ", "", @$row[6]);
+          $images = str_replace(" ", "", @$row[8]);
           $imgs = explode("|",trim($images));
           $data = [
-            'title' => (string) @$row[0],
-            'sku' => (string) @$row[1],
+            'title' => (string) @$row[1],
+            'sku' => (string) @$row[0],
             'content' => @$row[9],
-            'summary' => '',
-            'price' => (integer) $row[3] ?? str_replace(',', '', $row[3]),
+            'summary' => @$row[2],
+            'price' => (integer) $row[5] ?? str_replace(',', '', $row[5]),
             'price2' => (integer) $row[4] ?? str_replace(',', '', $row[4]),
-            'madein' => (string) @$row[5],
-            'category_id' => (integer) $this->get_category((string) @$row[2]),
+            'madein' => (string) @$row[7],
+            //'category_id' => (integer) $this->get_category((string) @$row[2]),
+             'category_id' => (integer) @$row[6]),
             'image_link' => json_encode($imgs),
             'is_special' => 0,
-            'discount' => (integer) @$row[7],
-            'unit' => (string) @$row[8]
+            //'discount' => (integer) @$row[7],
+            'unit' => (string) @$row[3]
           ];
           //dd($data);
           if(!$product){
