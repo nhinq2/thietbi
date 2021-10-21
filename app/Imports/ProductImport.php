@@ -30,7 +30,7 @@ class ProductImport implements ToCollection
             'price2' => (integer) $row[4] ?? str_replace(',', '', $row[4]),
             'madein' => (string) @$row[7],
             //'category_id' => (integer) $this->get_category((string) @$row[2]),
-             'category_id' => (integer) @$row[6]),
+            'category_id' => (integer) @$row[6],
             'image_link' => json_encode($imgs),
             'is_special' => 0,
             //'discount' => (integer) @$row[7],
