@@ -226,9 +226,7 @@ class ProductController extends BaseController
 
     function import_product(Request $request){
       if ($request->hasFile('file_upload')) {
-        //Excel::import(new ProductImport, $request->file('file_upload'));
-          $rows = Excel::toArray(new ProductImport, $request->file('file_upload'));
-          return response()->json(["rows"=>$rows]);
+        Excel::toArray(new ProductImport, $request->file('file_upload'));
       }
       return redirect()->back()->with('status', 'Nhập khẩu thành công');
     }
