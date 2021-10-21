@@ -8,7 +8,7 @@ use File;
 use Illuminate\Http\Request;
 use Image;
 use App\Imports\ProductImport;
-use Maatwebsite\Excel\Facades\Excel;
+use Excel;
 use Auth;
 
 class ProductController extends BaseController
