@@ -64,9 +64,11 @@ class UserController extends Controller
     public function api_user(Request $request)
     {
         if(isset($request->district_id)){
-          return User::where('district_id', $request->district_id)->where('role', 'vendor')->first();
+          $user = User::where('district_id', $request->district_id)->where('role', 'vendor')->first();
+        }else{
+          $user = User::find($request->id);
         }
-        return User::find($request->id);
+        return response()->json($user);
     }
 
     /**
